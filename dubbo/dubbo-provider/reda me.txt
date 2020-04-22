@@ -1,0 +1,12 @@
+Dubbo的内置了四种负载均衡策略
+    1.RandomLoadBalance:随机负载均衡，随机选择一个，是Dubbo默认的负载均衡策略, Dubbo 中的随机负载均衡有
+        一个权重的概念，即按照权重设置随机概率可以对 Provider 设置权重。机器性能好的，可以设置大一点
+        的权重，性能差的，设置小一点的权重,权重会对负载均衡产生影响。可以在Dubbo Admin中对Provider
+        进行权重的设置。
+    2.RoundRobinLoadBalance:轮询负载均衡，轮询选择一个 ,轮询负载均衡，就是依次的调用所有的 Provider。
+        和随机负载均衡策略一样，轮询负载均衡策略也有权重的概念
+    3.LeastActiveLoadBalance:最少活跃调用数，相同活跃的随机，活跃慢的收到的请求少
+    4.ConsistentHashLoadBalance:Hash一致性的负载均衡，相同参数的请求Hash相同会发在同一台机器上
+
+
+如果负载均衡，默认使用随机负载均衡,也可以自己写负载均衡
